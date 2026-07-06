@@ -600,6 +600,10 @@
 </footer>
 
 <script>
+  // Always start at the top on reload (don't restore previous scroll position)
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.addEventListener('load', () => { if (!location.hash) window.scrollTo(0, 0); });
+
   // Mobile menu
   const burger = document.getElementById('burger');
   const navLinks = document.getElementById('navLinks');
